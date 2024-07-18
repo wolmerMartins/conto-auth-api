@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: dev.dockerfile
+    image: dev-conto-auth-api
+    develop:
+      watch:
+        - action: rebuild
+          path: ./src
+    ports:
+      - 5000:8080
