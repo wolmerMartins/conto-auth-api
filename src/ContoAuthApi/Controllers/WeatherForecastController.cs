@@ -1,3 +1,5 @@
+using ContoAuthApi.Accounts.Entities;
+using ContoAuthApi.Accounts.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContoAuthApi.Controllers;
@@ -5,27 +7,17 @@ namespace ContoAuthApi.Controllers;
 [Route("weatherforecast")]
 public class WeatherForecastController : Controller
 {
-    public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+    private readonly IWeatherForecastService _weatherForecastService;
+
+    public WeatherForecastController(IWeatherForecastService weatherForecastService)
     {
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        _weatherForecastService = weatherForecastService;
     }
 
     [HttpGet]
     public ActionResult<IEnumerable<WeatherForecast>> GetWeatherForecast()
     {
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
+        var forecast = _weatherForecastService.GetWeatherForecasts();
 
         return Ok(new
         {
