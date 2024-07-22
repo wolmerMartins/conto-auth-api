@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C4C2E34-4B2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContoAuthApi", "ContoAuthApi\ContoAuthApi.csproj", "{A7E56B94-E6F8-4235-B8EC-2561FFA7C571}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContoAuthApi.Accounts", "ContoAuthApi.Accounts\ContoAuthApi.Accounts.csproj", "{7F655A9B-DD37-43B2-80D5-6C2C6836409A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{A7E56B94-E6F8-4235-B8EC-2561FFA7C571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E56B94-E6F8-4235-B8EC-2561FFA7C571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E56B94-E6F8-4235-B8EC-2561FFA7C571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F655A9B-DD37-43B2-80D5-6C2C6836409A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F655A9B-DD37-43B2-80D5-6C2C6836409A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F655A9B-DD37-43B2-80D5-6C2C6836409A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F655A9B-DD37-43B2-80D5-6C2C6836409A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A7E56B94-E6F8-4235-B8EC-2561FFA7C571} = {6C4C2E34-4B28-45A1-947B-8B39FE7F75A7}
