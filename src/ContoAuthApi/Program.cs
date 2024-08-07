@@ -1,3 +1,5 @@
+using ContoAuthApi.Accounts.Repositories;
+using ContoAuthApi.Accounts.Repositories.Models;
 using ContoAuthApi.Accounts.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
+
+builder.Services.Configure<AccountsDatabaseSettings>(
+    builder.Configuration.GetSection("AccountsDatabase"));
+builder.Services.AddSingleton<IAccountsRepository, AccountsRepository>();
+builder.Services.AddSingleton<IAccountsService, AccountsService>();
 
 var app = builder.Build();
 

@@ -10,3 +10,8 @@ services:
           path: ./src
     ports:
       - 5000:8080
+
+  mongodb:
+    container_name: database
+    image: mongo:7.0.6-jammy
+    restart: always
