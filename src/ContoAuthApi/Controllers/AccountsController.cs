@@ -18,6 +18,9 @@ public class AccountsController : Controller
     {
         var result = await _accountsService.AccountExists(email);
 
-        return Ok(result);
+        return Ok(new
+        {
+            exists = result
+        });
     }
 }
